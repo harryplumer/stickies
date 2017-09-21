@@ -14,10 +14,12 @@ class App extends Component {
           <Header as="h1" textAlign="center" style={{marginTop: "30px", marginBottom: "10px"}}>Welcome To Hank's Stickies</Header>
           <Header as="h3" textAlign="center" style={{marginBottom: "10px"}}>Add A Note</Header>
           <StickyForm editing={false} />
+          <Header as="h3" textAlign="center" style={{marginBottom: "10px"}}>Filter Stickies</Header>
+          <Footer style={{marginBottom: "25px"}} />
         </Grid.Column>
         <Grid.Column width={14}>
           <StickyList />
-          <Footer />
+          
         </Grid.Column>
       </Grid>
     </Container>

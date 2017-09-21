@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setFilter } from '../actions/filter';
+import {Button} from 'semantic-ui-react'
 
 const styles = {
   link: { textDecoration: 'underline', color: 'blue', cursor: 'pointer' }

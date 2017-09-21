@@ -32,11 +32,12 @@ class StickyForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    let sticky = this.state
     let { dispatch, id } = this.props
-    let newSticky = {id, ...sticky}
+    const {color, content} = this.state.sticky
+    let newSticky = {sticky: {id, color, content }}
+    debugger
     if (this.props.editing){
-      dispatch(editSticky(this.state.sticky))
+      dispatch(editSticky(newSticky))
       this.props.saveEdit()
     }
     else {

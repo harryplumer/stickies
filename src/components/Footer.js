@@ -1,8 +1,9 @@
 import React from 'react';
+import FilterLink from './FilterLink'
 
 const Footer = () => {
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
       <FilterLink>All</FilterLink>
       <FilterLink>Yellow</FilterLink>
       <FilterLink>Green</FilterLink>

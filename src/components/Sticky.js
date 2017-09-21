@@ -15,14 +15,16 @@ class Sticky extends React.Component{
     this.setState({editing: false})
   }
 
+       
+
   render(){
     if (this.state.editing){
-      let sticky = {...this.props.sticky, id: this.props.id}      
+      let sticky = this.props.sticky     
       return(
         <Card color={sticky.color.toLowerCase()}>
         <Card.Content>
         <Card.Header>
-            <span style={{cursor: 'pointer'}} onClick={() => this.props.dispatch(deleteSticky(sticky.id))}>
+            <span style={{cursor: 'pointer'}} onClick={() => this.props.dispatch(deleteSticky(this.props.id))}>
               <Icon name='remove' size='small' />
             </span>
         </Card.Header>
@@ -32,17 +34,13 @@ class Sticky extends React.Component{
       )
     }
     else{
-      let sticky = {}
-      if (this.props.content)
-        sticky = {...this.props}
-      else 
-        sticky = {...this.props.sticky, id: this.props.id} 
+      const {sticky} = this.props
       debugger
       return(
         <Card color={sticky.color.toLowerCase()}>
           <Card.Content>
           <Card.Header>
-            <span style={{cursor: 'pointer'}} onClick={() => this.props.dispatch(deleteSticky(sticky.id))}>
+            <span style={{cursor: 'pointer'}} onClick={() => this.props.dispatch(deleteSticky(this.props.id))}>
               <Icon name='remove' size='small' />
             </span>
             <span style={{cursor: 'pointer'}} onClick={() => this.initEdit()}>
